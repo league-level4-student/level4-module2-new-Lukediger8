@@ -8,19 +8,34 @@ public class GoShopping {
 	//
 	//    Candy and Cereal are Food objects
 	//    Clothing and Toy are NonFood objects.
-	
 	public static void main(String[] args) {
+		Candy candy = new Candy();
+		Candy candy2 = new Candy();
+		Candy candy3 = new Candy();
+		Cereal cereal = new Cereal();
+		Cereal cereal2 = new Cereal();
+		Cereal cereal3 = new Cereal();
+
 		// 2. Create a Cart object of type Candy
-		
+		Cart<Candy> CandyCart = new Cart<Candy>();
 		// 3. Create another Cart object of type Cereal
-		
+		Cart<Cereal> CerealCart = new Cart<Cereal>();
 		// 4. Add a few items to EACH cart
-		
-		
+		CandyCart.add(candy);
+		CandyCart.add(candy2);
+		CandyCart.add(candy3);
+		CerealCart.add(cereal);
+		CerealCart.add(cereal2);
+		CerealCart.add(cereal3);
 		
 		
 		// 5. Call the showCart() method on EACH cart
-		
+		for(int i = 0; i < CandyCart.length(); i++) {
+			CandyCart.showCart();
+		}
+		for(int j = 0; j < CerealCart.length(); j++) {
+			CerealCart.showCart();
+		}
 		
 		// 6. Run the code
 		
