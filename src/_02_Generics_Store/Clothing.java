@@ -6,12 +6,7 @@ import javax.swing.JLabel;
 
 public class Clothing extends NonFood{
 	public Clothing() {
-		if(new Random().nextBoolean()) {
-			this.item = "clothing1.jpeg";
-		}
-		else {
-			this.item = "clothing2.jpeg";
-		}
+		   this.item = new Random().nextBoolean() ? "clothing1.jpeg" : "clothing2.jpeg";
 	}
 
 	@Override

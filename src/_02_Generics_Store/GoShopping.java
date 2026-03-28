@@ -30,12 +30,16 @@ public class GoShopping {
 		
 		
 		// 5. Call the showCart() method on EACH cart
-		for(int i = 0; i < CandyCart.length(); i++) {
+		int i =0;
+		do {
 			CandyCart.showCart();
-		}
-		for(int j = 0; j < CerealCart.length(); j++) {
-			CerealCart.showCart();
-		}
+		}while(i < CandyCart.length());
+
+		int j =0;
+		do {
+			CandyCart.showCart();
+		}while(j < CandyCart.length());
+
 		
 		// 6. Run the code
 		
