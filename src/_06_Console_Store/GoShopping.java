@@ -1,11 +1,14 @@
 package _06_Console_Store;
 
+import java.util.Scanner;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class GoShopping {
+
 	// 1. Look through other classes to see how they all interact.
 	//
 	//    There is a generic Cart class that can hold different 
@@ -15,24 +18,43 @@ public class GoShopping {
 	//    Clothing and Toy are NonFood objects.
 	static Cereal cereal = new Cereal();
 	static Candy candy = new Candy();
-	public static void showItems() {
-	    JFrame frame = new JFrame();
-	    JPanel panel = new JPanel();
-	    JButton label = new JButton();
-	    JButton label2 = new JButton();
-	    panel.add(cereal.getFood());
-	    panel.add(candy.getFood());
-	    label.setText("Cereal: $4");
-	    label2.setText("Candy: $3");
-	    panel.add(label);
-	    panel.add(label2);
-	    frame.add(panel);
-	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    frame.pack();
-	    frame.setVisible(true);
-	    }
-	
+	static Clothing clothing = new Clothing();
+	static Toy toys = new Toy();
+
 	public static void main(String[] args) {
+		 JFrame frame = new JFrame();
+		 JPanel panel = new JPanel();
+			frame.add(panel);frame.setVisible(true);
+		Scanner scanner;
+		scanner = new Scanner(System.in);
+		System.out.println("Welcome to the Console Store\nItems:\nCandy($1.5)\nCereal($3)\nClothing($10)\nToys($8)\nWhat would you like to buy?");
+		String answer= scanner.next();
+		if(answer.toLowerCase() == "candy") {
+			panel.add(candy.getFood());
+
+			frame.pack();
+			
+			
+		}
+		else if(answer.toLowerCase() == "cereal"){
+			cereal.getFood();
+			frame.add(panel);
+			frame.pack();
+			frame.setVisible(true);
+		}
+		else if(answer.toLowerCase() == "clothing" ) {
+			clothing.getNonFood();
+			frame.add(panel);
+			frame.pack();
+			frame.setVisible(true);
+		}
+		else if(answer.toLowerCase() == "clothing" ) {
+			toys.getNonFood();
+			frame.add(panel);
+			frame.pack();
+			frame.setVisible(true);
+		}
+		/*
 		int stipend = 20;
 		showItems();
 		Candy candy = new Candy();
@@ -54,7 +76,7 @@ public class GoShopping {
 		CerealCart.add(cereal);
 		CerealCart.add(cereal2);
 		CerealCart.add(cereal3);
-		
+		*/
 		
 		// 5. Call the showCart() method on EACH cart
 			//CandyCart.showCart();
