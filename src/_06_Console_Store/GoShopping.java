@@ -20,39 +20,52 @@ public class GoShopping {
 	static Candy candy = new Candy();
 	static Clothing clothing = new Clothing();
 	static Toy toys = new Toy();
-
 	public static void main(String[] args) {
+		double money = 20;
 		 JFrame frame = new JFrame();
 		 JPanel panel = new JPanel();
-			frame.add(panel);frame.setVisible(true);
+		 JPanel panel2 = new JPanel();
+		 JFrame frame2 = new JFrame();
+		 JLabel label = new JLabel();
+		frame2.setSize(200,200);
+		frame2.setName("Wallet");
+		frame2.add(panel2);
+		panel2.add(label);
+		label.setText("$20");
+		label.setSize(150,150);
+		frame2.setVisible(true);
+		label.setVisible(true);
+		frame.setSize(400,400);
+		panel.setName("Cart");
+		frame.add(panel);
+		frame.setVisible(true);
 		Scanner scanner;
 		scanner = new Scanner(System.in);
+		do {
 		System.out.println("Welcome to the Console Store\nItems:\nCandy($1.5)\nCereal($3)\nClothing($10)\nToys($8)\nWhat would you like to buy?");
-		String answer= scanner.next();
-		if(answer.toLowerCase() == "candy") {
+		String answer = scanner.next();
+		if(answer.toLowerCase().equals("candy")) {
 			panel.add(candy.getFood());
-
-			frame.pack();
-			
-			
+			money -= 1.5;
 		}
-		else if(answer.toLowerCase() == "cereal"){
-			cereal.getFood();
-			frame.add(panel);
-			frame.pack();
-			frame.setVisible(true);
+		else if(answer.toLowerCase().equals("cereal")){
+			panel.add(cereal.getFood());
+			money -= 3;
 		}
-		else if(answer.toLowerCase() == "clothing" ) {
-			clothing.getNonFood();
-			frame.add(panel);
-			frame.pack();
-			frame.setVisible(true);
+		else if(answer.toLowerCase().equals("clothing")) {
+			panel.add(clothing.getNonFood());
+			money -= 10;
 		}
-		else if(answer.toLowerCase() == "clothing" ) {
-			toys.getNonFood();
-			frame.add(panel);
-			frame.pack();
-			frame.setVisible(true);
+		else if(answer.toLowerCase().equals("toy")) {
+			panel.add(toys.getNonFood());
+			money -= 8;
+		}
+		label.setText("Wallet: $" + money);
+		frame2.pack();
+		frame.pack();
+		} while(money >= 1.5);
+		if(money < 0) {
+			System.out.println("You've ran out of money!");
 		}
 		/*
 		int stipend = 20;

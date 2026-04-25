@@ -15,4 +15,3 @@ public class Candy extends Food{
 		return new JLabel(loadImage(this.item));
 	}
 }
-

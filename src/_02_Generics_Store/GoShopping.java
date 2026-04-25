@@ -1,10 +1,5 @@
 package _02_Generics_Store;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
 public class GoShopping {
 	// 1. Look through other classes to see how they all interact.
 	//
@@ -13,28 +8,7 @@ public class GoShopping {
 	//
 	//    Candy and Cereal are Food objects
 	//    Clothing and Toy are NonFood objects.
-	static Cereal cereal = new Cereal();
-	static Candy candy = new Candy();
-	public static void showItems() {
-	    JFrame frame = new JFrame();
-	    JPanel panel = new JPanel();
-	    JButton label = new JButton();
-	    JButton label2 = new JButton();
-	    panel.add(cereal.getFood());
-	    panel.add(candy.getFood());
-	    label.setText("Cereal: $4");
-	    label2.setText("Candy: $3");
-	    panel.add(label);
-	    panel.add(label2);
-	    frame.add(panel);
-	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    frame.pack();
-	    frame.setVisible(true);
-	    }
-	
 	public static void main(String[] args) {
-		int stipend = 20;
-		showItems();
 		Candy candy = new Candy();
 		Candy candy2 = new Candy();
 		Candy candy3 = new Candy();
@@ -46,7 +20,6 @@ public class GoShopping {
 		Cart<Candy> CandyCart = new Cart<Candy>();
 		// 3. Create another Cart object of type Cereal
 		Cart<Cereal> CerealCart = new Cart<Cereal>();
-		
 		// 4. Add a few items to EACH cart
 		CandyCart.add(candy);
 		CandyCart.add(candy2);
@@ -57,15 +30,23 @@ public class GoShopping {
 		
 		
 		// 5. Call the showCart() method on EACH cart
-			//CandyCart.showCart();
-			//CerealCart.showCart();
+		int i =0;
+		do {
+			CandyCart.showCart();
+		}while(i < CandyCart.length());
+
+		int j =0;
+		do {
+			CandyCart.showCart();
+		}while(j < CandyCart.length());
+
 		
 		// 6. Run the code
-
 		
 		// 7. Comment out the code you have so far
 		
 		// 8. Repeat steps 2-5 for a Clothing Cart and a Toy Cart
+		
 		
 		
 		

@@ -6,13 +6,13 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-public abstract class Food {
+public abstract class Food{
     String item;
 
     public abstract JLabel getFood();
 
     @SuppressWarnings("rawtypes")
-    public static ImageIcon loadImage(String fileName) {
+    public ImageIcon loadImage(String fileName) {
         try {
             return new ImageIcon(ImageIO
                     .read(new Cart().getClass().getResourceAsStream("images/"+fileName)));
